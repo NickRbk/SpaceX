@@ -10,5 +10,4 @@ public class SpaceX extends Rocket {
             System.out.println("Fueling tanks for " + tankVolume + " units. Good journey!");
         }
     }
-
 }

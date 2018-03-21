@@ -1,4 +1,6 @@
-public class Rocket {
+import interfaces.IsSuccessFly;
+
+public abstract class Rocket implements IsSuccessFly {
 
     protected int tankVolume = 500;
     Engine engine;
