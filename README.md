@@ -1,4 +1,4 @@
-## rocket.SpaceX project
+## SpaceX project
 
 
 #### Description
@@ -8,7 +8,7 @@ of interface, enum, inner class, inheritance etc.
 #### How to start up ?
 - git clone dev branch
 - compile App.java by ```javac App.java```
-- start app with ```java App```
+- start app with ```java App [int tankVolume] [int rocketCapacity] [String destination]```
 
 #### The app expected 3 arguments: 
 ```int tankVolume```, ```int rocketCapacity```, ```String destination```
