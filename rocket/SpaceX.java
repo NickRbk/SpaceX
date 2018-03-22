@@ -1,6 +1,8 @@
+package rocket;
+
 public class SpaceX extends Rocket {
 
-    // some specific properties for SpaceX may be here
+    // some specific properties for rocket.SpaceX may be here
 
     public SpaceX(int tankVolume) {
         if(tankVolume < 500) {

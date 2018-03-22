@@ -1,27 +1,5 @@
-import enums.Planets;
-
 public class App {
     public static void main(String ... args) {
-        int tankVolume = Integer.parseInt( args[0] );
-        int rocketCapacity = Integer.parseInt( args[1] );
-        String destination = args[2]; // You can choose between Moon or Mars
-
-        Rocket spaceX = new SpaceX(tankVolume);   // Create our best Rocket
-
-        Rocket.Cabin cabin = spaceX.new Cabin();  // NOTE: rocket maintain only from cabin
-                                                  //       Enter to cabin first !)
-
-        cabin.start( rocketCapacity ); // NOTE: if you miss this line your rocket can't start
-                                       //       Start rocket with engine specific capacity
-
-        int fuelConsumption = spaceX.engine.getFuelConsumption(); // get fuel consumption
-
-        if(destination.equals("Mars")) {
-            spaceX.isSuccessFly(Planets.MARS, tankVolume, fuelConsumption);
-        } else if(destination.equals("Moon")) {
-            spaceX.isSuccessFly(Planets.MOON, tankVolume, fuelConsumption);
-        } else {
-            System.out.println("So far we're not fly to other planet... Choose Mars or Moon !)");
-        }
+        Start.bootstrap( Integer.parseInt( args[0] ), Integer.parseInt( args[1] ), args[2] );
     }
 }

@@ -1,4 +1,4 @@
-package enums;
+package destinations;
 
 public enum Planets {
     MARS(100, "Mars"), MOON(4, "Moon");

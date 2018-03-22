@@ -1,10 +1,10 @@
-import interfaces.Consumption;
+package engine;
 
-public class Engine implements Consumption {
+public class Engine implements IConsumable {
 
     private int capacity;
 
-    Engine(int capacity) {
+    public Engine(int capacity) {
         this.capacity = capacity;
     }
 

@@ -1,11 +1,13 @@
-import interfaces.IsSuccessFly;
+package rocket;
 
-public abstract class Rocket implements IsSuccessFly {
+import engine.Engine;
+
+public abstract class Rocket implements IFlyable {
 
     protected int tankVolume = 500;
-    Engine engine;
+    public Engine engine;
 
-    class Cabin {
+    public class Cabin {
         public void start(int rocketCapacity) {
            engine = new Engine(rocketCapacity);
         }
