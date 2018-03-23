@@ -1,0 +1,33 @@
+package rocket.cabin;
+
+import rocket.cabin.type.Cabins;
+
+public class Cabin {
+    String name;
+    int height, width, weight, capacity;
+    private static Cabin cabin;
+
+    private Cabin(String cabinType) {
+        for(Cabins cabin : Cabins.values()) {
+            if(cabinType.equals( cabin.getName() )) {
+                this.name = cabin.getName();
+                this.height = cabin.getHeight();
+                this.width = cabin.getWidth();
+                this.weight = cabin.getWeight();
+                this.capacity = cabin.getCapacity();
+            }
+        }
+    }
+
+    public static Cabin getCabin(String cabinType) {
+        if(cabin == null) {
+            return new Cabin(cabinType);
+        } else {
+            return cabin;
+        }
+    }
+
+    public void start(int rocketCapacity) {
+//        engine = new Engine(rocketCapacity);
+    }
+}
