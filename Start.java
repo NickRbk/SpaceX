@@ -4,14 +4,7 @@ import rocket.SpaceX;
 
 public final class Start {
     public static void bootstrap(int tankVolume, int rocketCapacity, String destination) {
-        Planets planet = null;                    // initially pilots don't know where to fly
-
-        for(Planets planetE : Planets.values()) {
-            if(destination.equals( planetE.getName() )) {
-                planet = planetE;
-                break;
-            }
-        }
+        Planets planet = getDestination(destination);
 
         if(planet != null) {
             Rocket spaceX = new SpaceX(tankVolume);   // Prepare rocket to fly
@@ -26,5 +19,14 @@ public final class Start {
         } else {
             System.out.println("So far we're not fly to other planet... Choose Mars or Moon !)");
         }
+    }
+
+    private static Planets getDestination(String destination) {
+        for(Planets planet : Planets.values()) {
+            if(destination.equals( planet.getName() )) {
+               return planet;
+            }
+        }
+        return null;  // if passenger choose invalid destination return null
     }
 }
