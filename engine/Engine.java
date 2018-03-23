@@ -15,4 +15,12 @@ public class Engine implements IConsumable {
 
         return fuelConsumption;
     }
+
+    public static int getFuelNeeds(int fuelConsumption, int distance) {
+        return fuelConsumption * distance;
+    }
+
+    public static int getAdditionalFuelNeeds(int fuelConsumption, int distance, int tankVolume) {
+        return getFuelNeeds(fuelConsumption, distance) - tankVolume;
+    }
 }
