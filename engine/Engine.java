@@ -4,8 +4,9 @@ import engine.type.Engines;
 
 public class Engine {
 
-    String name;
-    int height, width, weight, power, fuelConsumption, fuelTankSpace, acceleration1, acceleration2;
+    private String name;
+    private int height, width, weight, power, fuelConsumption, fuelTankSpace;
+    private float acceleration1, acceleration2;
 
     public Engine(String engineType) {
         for(Engines engine : Engines.values()) {
@@ -23,26 +24,39 @@ public class Engine {
         }
     }
 
-
-//    private int capacity;
-//
-//    public Engine(int capacity) {
-//        this.capacity = capacity;
-//    }
-//
-//    public int getFuelConsumption() {
-//        int fuelConsumption = this.capacity / 2 ; // some logic to calc fuel consumption
-//
-//        System.out.println("Fuel consumption is " + fuelConsumption + " per one destination unit");
-//
-//        return fuelConsumption;
-//    }
-//
-    public static int getFuelNeeds(int fuelConsumption, int distance) {
-        return fuelConsumption * distance;
+    public String getName() {
+        return name;
     }
 
-    public static int getAdditionalFuelNeeds(int fuelConsumption, int distance, int tankVolume) {
-        return getFuelNeeds(fuelConsumption, distance) - tankVolume;
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public int getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public int getFuelTankSpace() {
+        return fuelTankSpace;
+    }
+
+    public float getAcceleration1() {
+        return acceleration1;
+    }
+
+    public float getAcceleration2() {
+        return acceleration2;
     }
 }

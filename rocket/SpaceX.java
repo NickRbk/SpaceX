@@ -1,15 +1,27 @@
 package rocket;
 
+import engine.Engine;
+import rocket.cabin.Cabin;
+import rocket.fuelTank.FuelTank;
+
 public class SpaceX extends Rocket {
 
-    // some specific properties for rocket.SpaceX may be here
+    private int weight = 18000;
 
-    public SpaceX(int tankVolume) {
-        if(tankVolume < 500) {
-            System.out.println("Set default value 500, cuz min value");
-        } else {
-            this.tankVolume = tankVolume;
-            System.out.println("Fueling tanks for " + tankVolume + " units. Good journey!");
-        }
+    public void setCabin(String cabinType) {
+        this.cabin = Cabin.getCabin(cabinType);
+    }
+
+    public void setEngine(String engineType) {
+        this.engine = new Engine(engineType);
+    }
+
+    public void setFuelTank(String fuelTankType) {
+        this.fuelTank = new FuelTank(fuelTankType);
+    }
+
+    @Override
+    public int getWeight() {
+        return this.weight;
     }
 }

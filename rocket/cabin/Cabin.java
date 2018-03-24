@@ -3,8 +3,8 @@ package rocket.cabin;
 import rocket.cabin.type.Cabins;
 
 public class Cabin {
-    String name;
-    int height, width, weight, capacity;
+    private String name;
+    private int height, width, weight, capacity;
     private static Cabin cabin;
 
     private Cabin(String cabinType) {
@@ -27,7 +27,32 @@ public class Cabin {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public static Cabin getCabin() {
+        return cabin;
+    }
+
     public void start(int rocketCapacity) {
 //        engine = new Engine(rocketCapacity);
+        System.out.println("Start engine!");
     }
 }

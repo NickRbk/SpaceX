@@ -1,19 +1,19 @@
 package destinations;
 
 public enum Planets {
-    MARS(100, "Mars"), MOON(4, "Moon");
+    MARS(0.52f, "Mars"), JUPITER(4.2f, "Jupiter"), SATURN(8.52f, "Saturn"), URANUS(18.21f, "Uranus"), NEPTUNE(29.09f, "Neptune");
 
-    private int destination;
+    private float distance;  // light-years unit (from Earth)
     private String name;
 
-    Planets(int destination, String name) {
-        this.destination = destination;
+    Planets(float distance, String name) {
+        this.distance = distance;
         this.name = name;
     }
 
     // set getters for destination and name
-    public int getDestination() {
-        return destination;
+    public float getDistance() {
+        return distance;
     }
 
     public String getName() {
