@@ -4,9 +4,9 @@ import engine.Engine;
 import rocket.cabin.Cabin;
 import rocket.fuelTank.FuelTank;
 
-public class Rocket implements IFlyable {
+public class Rocket {
 
-    private int weight = 22000; // default Rocket weight
+    private int weight = 28000; // default Rocket weight
 
     Cabin cabin;
     Engine engine;

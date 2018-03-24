@@ -5,8 +5,8 @@ import engine.type.Engines;
 public class Engine {
 
     private String name;
-    private int height, width, weight, power, fuelConsumption, fuelTankSpace;
-    private float acceleration1, acceleration2;
+    private int height, width, weight, fuelConsumption, fuelTankSpace;
+    private float power, acceleration1, acceleration2;
 
     public Engine(String engineType) {
         for(Engines engine : Engines.values()) {
@@ -40,7 +40,7 @@ public class Engine {
         return weight;
     }
 
-    public int getPower() {
+    public float getPower() {
         return power;
     }
 

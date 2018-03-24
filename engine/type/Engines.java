@@ -1,17 +1,17 @@
 package engine.type;
 
 public enum Engines {
-    SLOW("Slow", 100, 150, 3000, 40, 140, 15000, 9.6f, 11.2f),
-    ECONOMY("Economy", 120, 170, 2700, 60, 100, 20400, 9.7f, 11.5f),
-    SUPER_FAST("SuperFast", 160, 80, 1200, 100, 250, 12800, 12.6f, 18.5f),
-    FAST("Fast", 140, 110, 1700, 90, 230, 15400, 10.2f, 14.5f),
-    OLD("Old", 200, 250, 4000, 20, 300, 50000, 4.7f, 4.9f);
+    SLOW("Slow", 100, 150, 3000, 0.4f, 140, 15000, 9.6f, 11.2f),
+    ECONOMY("Economy", 120, 170, 2700, 0.6f, 100, 20400, 9.7f, 11.5f),
+    SUPER_FAST("SuperFast", 160, 100, 1200, 0.8f, 250, 12800, 12.6f, 18.5f),
+    FAST("Fast", 140, 110, 1700, 0.9f, 230, 15400, 10.2f, 14.5f),
+    OLD("Old", 200, 250, 4000, 0.2f, 300, 50000, 4.7f, 4.9f);
 
     private String name;
-    private int height, width, weight, power, fuelConsumption, fuelTankSpace;
-    private float acceleration1, acceleration2;
+    private int height, width, weight, fuelConsumption, fuelTankSpace;
+    private float power, acceleration1, acceleration2;
 
-    Engines(String name, int height, int width, int weight, int power, int fuelConsumption,
+    Engines(String name, int height, int width, int weight, float power, int fuelConsumption,
             int fuelTankSpace, float acceleration1, float acceleration2) {
         this.name = name;
         this.height = height;
@@ -40,7 +40,7 @@ public enum Engines {
         return weight;
     }
 
-    public int getPower() {
+    public float getPower() {
         return power;
     }
 

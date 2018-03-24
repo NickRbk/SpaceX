@@ -8,8 +8,11 @@ public final class Start {
 
         if(planet != null) {
 
-            Rocket spaceX = new SpaceX();
-            System.out.println(spaceX.getWeight());
+            SpaceX spaceX = new SpaceX();
+
+            System.out.println("TIME = " + spaceX.getTimeTrip());
+            System.out.println("VELOCITY = " + spaceX.getMaximumVelocity());
+            System.out.println("Fuel NEEDS = " + spaceX.getFuelNeeds());
 
 
         } else {

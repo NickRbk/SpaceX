@@ -1,8 +1,12 @@
 package rocket;
 
+import destinations.Planets;
 import engine.Engine;
 import rocket.cabin.Cabin;
 import rocket.fuelTank.FuelTank;
+import spaceCalculations.SpaceCalculations;
+
+import java.math.BigDecimal;
 
 public class SpaceX extends Rocket {
 
@@ -23,5 +27,17 @@ public class SpaceX extends Rocket {
     @Override
     public int getWeight() {
         return this.weight;
+    }
+
+    public BigDecimal getTimeTrip() {
+        return SpaceCalculations.observerTravelTime(Planets.MARS.getDistanceMeters(), 9.8f);
+    }
+
+    public BigDecimal getMaximumVelocity() {
+        return SpaceCalculations.maximumVelocity(Planets.MARS.getDistanceMeters(), 9.8f);
+    }
+
+    public BigDecimal getFuelNeeds() {
+        return SpaceCalculations.fuelNeeds(Planets.MARS.getDistanceMeters(), 9.8f, 25000, 0.8f);
     }
 }
