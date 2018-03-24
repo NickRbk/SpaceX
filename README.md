@@ -20,3 +20,8 @@ For destination you can write Mars or Moon...Other directions in progress\)
 
 If you haven't enough fuel, app say that Rocket crashed and 
 how many additional fuel you needed to success fly
+
+
+##### Additional resources:
+- https://theplanets.org/distances-between-planets/
+- http://nathangeffen.webfactional.com/spacetravel/spacetravel.php
