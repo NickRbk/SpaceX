@@ -1,11 +1,11 @@
 package rocket.cabin.type;
 
 public enum Cabins {
-    COMFORT("Comfort", 3, 20, 900, 5),
+    COMFORT("comfort", 3, 20, 900, 5),
     VIP("VIP", 5, 50, 1400, 2),
-    DELUX("Delux", 5, 70, 2100, 8),
-    COSY("Cosy", 2, 30, 800, 7),
-    ECONOMY("Economy", 1, 10, 600, 10);
+    DELUX("delux", 5, 70, 2100, 8),
+    COSY("cosy", 2, 30, 800, 7),
+    ECONOMY("economy", 1, 10, 600, 10);
 
     private String name;
     private int height, width, weight, capacity;
