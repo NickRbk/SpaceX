@@ -100,7 +100,7 @@ public class Rocket implements IPotentiallyFlyable {
     }
 
     public FuelTank[] getFuelTanks() {
-        System.out.println("\nYour spaceship has the below engines: ");
+        System.out.println("\nYour spaceship has the below fuel tanks: ");
         for(FuelTank fuelTank : fuelTanks) {
             System.out.println(fuelTank.toString());
         }
