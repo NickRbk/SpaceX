@@ -1,32 +1,27 @@
 import destinations.Planets;
+import engine.Engine;
 import rocket.Rocket;
 import rocket.SpaceX;
+import rocket.fuelTank.FuelTank;
+import utils.BeginTravel;
+import utils.UserInteraction;
 
 public final class Start {
-    public static void bootstrap(int tankVolume, int rocketCapacity, String destination) {
-        Planets planet = getDestination(destination);
+    public static void bootstrap() {
+        boolean tryAgain = false;
+        do {
+            // Ask user for essential parameters for our space travel
+            String cabin = UserInteraction.askCabin();
+            Engine[] engines = UserInteraction.askEngines();
+            FuelTank[] fuelTanks = UserInteraction.askFuelTanks( engines );
+            Planets planet = UserInteraction.askDestination();
 
-        if(planet != null) {
-            Rocket spaceX = new SpaceX(tankVolume);   // Prepare rocket to fly
+            // Create Rocket with input parameters
+            Rocket spaceX = new SpaceX();
+            spaceX.assembleRocket(cabin, engines, fuelTanks);
 
-            Rocket.Cabin cabin = spaceX.new Cabin();  // NOTE: rocket maintain only from cabin
-                                                      //       Enter to cabin first !)
-
-            cabin.start( rocketCapacity ); // NOTE: if you miss this line your rocket can't start
-                                           //       Start rocket with engine specific capacity
-
-            spaceX.isSuccessFly(planet, tankVolume, spaceX.engine.getFuelConsumption() );
-        } else {
-            System.out.println("So far we're not fly to other planet... Choose Mars or Moon !)");
-        }
-    }
-
-    private static Planets getDestination(String destination) {
-        for(Planets planet : Planets.values()) {
-            if(destination.equals( planet.getName() )) {
-               return planet;
-            }
-        }
-        return null;  // if passenger choose invalid destination return null
+            // Try to fly and ask for try again
+            tryAgain = BeginTravel.test(planet, spaceX);
+        } while(tryAgain);
     }
 }

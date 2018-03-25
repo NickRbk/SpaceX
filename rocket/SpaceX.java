@@ -2,14 +2,10 @@ package rocket;
 
 public class SpaceX extends Rocket {
 
-    // some specific properties for rocket.SpaceX may be here
+    private int weight = 15000;
 
-    public SpaceX(int tankVolume) {
-        if(tankVolume < 500) {
-            System.out.println("Set default value 500, cuz min value");
-        } else {
-            this.tankVolume = tankVolume;
-            System.out.println("Fueling tanks for " + tankVolume + " units. Good journey!");
-        }
+    @Override
+    public int getWeight() {
+        return this.weight;
     }
 }
