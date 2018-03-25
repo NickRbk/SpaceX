@@ -26,7 +26,7 @@ public class BeginTravel {
             System.out.println("\nWelcome on " + planet.getName() + ". It far from Earth in " + planet.getDistanceLightYears() +
                     " light-years and takes " + daysInFlight + " days");
 
-            System.out.println(String.format("\n\t\tEarth %s ------------------------------> Mars %s", Dates.currentDate().toString(), Dates.arrivalDate(daysInFlight)));
+            System.out.println(String.format("\n\t\tEarth %s ------------------------------> %s %s", Dates.currentDate().toString(), planet.getName(), Dates.arrivalDate(daysInFlight)));
 
 
             System.out.println("\nCongratulations! Try again? - y or [any key to abort]");
