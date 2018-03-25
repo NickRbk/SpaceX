@@ -24,6 +24,13 @@ public class Engine {
         }
     }
 
+    @Override
+    public String toString() {
+        return String.format("\tEngine Type: %s, power - %f, dimensions (h: %d, w: %d), " +
+                        "weight - %d, tank space - %d || Acceleration#1 (%f), Acceleration#2 (%f)",
+                name, power, height, width, weight, fuelTankSpace, acceleration1, acceleration2);
+    }
+
     public String getName() {
         return name;
     }

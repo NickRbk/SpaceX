@@ -1,5 +1,6 @@
 package rocket.cabin;
 
+import engine.Engine;
 import rocket.cabin.type.Cabins;
 
 public class Cabin {
@@ -27,6 +28,11 @@ public class Cabin {
         }
     }
 
+    public String toString() {
+        return String.format("\nCabin Type: %s, max passengers - %d, dimensions (h: %d, w: %d), weight - %d",
+                name, capacity, height, width, weight);
+    }
+
     public String getName() {
         return name;
     }
@@ -51,8 +57,13 @@ public class Cabin {
         return cabin;
     }
 
-    public void start(int rocketCapacity) {
-//        engine = new Engine(rocketCapacity);
-        System.out.println("Start engine!");
+    public void start(Engine[] engines) {
+        System.out.println("\n\n\tPilots in cabin. Turning engines on ...");
+        int engineCount = 0;
+
+        for(Engine engine : engines) {
+            engineCount++;
+            System.out.println(String.format("Engine #%d (%s)... Status: OK", engineCount, engine.getName()));
+        }
     }
 }

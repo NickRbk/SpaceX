@@ -18,6 +18,12 @@ public class FuelTank {
         }
     }
 
+    @Override
+    public String toString() {
+        return String.format("\tFuelTank Type: %s, capacity - %d, dimensions (h: %d, w: %d), weight - %d",
+                name, capacity, height, width, weight);
+    }
+
     public String getName() {
         return name;
     }
