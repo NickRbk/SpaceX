@@ -23,5 +23,7 @@ public final class Start {
             // Try to fly and ask for try again
             tryAgain = BeginTravel.test(planet, spaceX);
         } while(tryAgain);
+
+        System.out.println("\n\t Bye!\n");
     }
 }
