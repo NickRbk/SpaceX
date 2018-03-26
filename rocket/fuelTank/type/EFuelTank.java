@@ -1,11 +1,11 @@
 package rocket.fuelTank.type;
 
 public enum EFuelTank {
-    SMALL("small", 90, 2000, 95, 22600),
-    MEDIUM("medium", 110, 2400, 160, 27600),
-    LARGE("large", 138, 2900, 110, 37940),
-    HUGE("huge", 155, 3200, 180, 47900),
-    TITANIC("titanic", 190, 5400, 78, 54820);
+    SMALL("small", 90, 2000, 95, 320),
+    MEDIUM("medium", 110, 2400, 160, 390),
+    LARGE("large", 138, 2900, 110, 430),
+    HUGE("huge", 155, 3200, 180, 670),
+    TITANIC("titanic", 190, 4100, 78, 820);
 
     private String name;
     private int height, weight, width, capacity;

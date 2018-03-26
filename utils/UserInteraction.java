@@ -14,7 +14,7 @@ public class UserInteraction {
     public static String askCabin() {
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Step 1. Hi, passenger! We have several cabins for you: \tcomfort | VIP | delux | cosy | economy");
+        System.out.println("Step 1. Hi, passenger! We have several cabins for you: \n\tcomfort | VIP | delux | cosy | economy\n");
 
         while(true) {
             String userInput = in.nextLine();
@@ -34,7 +34,7 @@ public class UserInteraction {
         int counter = 0;
         String[] enginesType = new String[5];
 
-        System.out.println("Step 2. Now select engines to your Rocket: \tslow | economy | superFast | fast | old");
+        System.out.println("\nStep 2. Now select engines to your Rocket: \n\tslow | economy | superFast | fast | old\n");
 
         while(counter < 3) {
 
@@ -115,7 +115,7 @@ public class UserInteraction {
 
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Step 3. Now select fuel tanks to your engines: \tsmall | medium | large | huge | titanic");
+        System.out.println("\nStep 3. Now select fuel tanks to your engines: \n\tsmall | medium | large | huge | titanic\n");
         for(Engine engine : engines) {
             engineNumber++;
 
@@ -171,7 +171,7 @@ public class UserInteraction {
     public static EPlanet askDestination() {
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Step 4. Hi, passenger! We've almost finished, choose a planet to travel:" +
+        System.out.println("\nStep 4. Hi, passenger! We've almost finished, choose a planet to travel:" +
                 " \n\tMars | Jupiter | Saturn | Uranus | Neptune");
 
         while(true) {
