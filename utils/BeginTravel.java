@@ -1,6 +1,6 @@
 package utils;
 
-import destinations.Planets;
+import destinations.EPlanet;
 import rocket.Rocket;
 import spaceCalculations.SpaceCalculations;
 
@@ -9,9 +9,9 @@ import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class BeginTravel {
-    public static boolean test(Planets planet, Rocket spaceX) {
-        if( spaceX.isPotentiallyFlyable(planet.getDistanceMeters(), spaceX.getAccelerationAverage(), spaceX.getTotalWeight(),
-                spaceX.getEfficiencyAverage(),spaceX.getTotalFuel()) ) {
+    public static boolean test(EPlanet planet, Rocket spaceX) {
+        if( spaceX.isPotentiallyFlyable(planet.getDistanceMeters(), spaceX.getAccelerationAverage(),
+                spaceX.getTotalWeight(), spaceX.getEfficiencyAverage(),spaceX.getTotalFuel()) ) {
 
             spaceX.getCabin();
             spaceX.getEngines();
@@ -20,13 +20,14 @@ public class BeginTravel {
             spaceX.start();
 
 
-            int daysInFlight = Integer.parseInt(SpaceCalculations.observerTravelTime(planet.getDistanceMeters(), spaceX.getAccelerationAverage())
-                    .divide(BigDecimal.valueOf(86400), 0, RoundingMode.HALF_UP).toString());
+            int daysInFlight = Integer.parseInt(SpaceCalculations.observerTravelTime(planet.getDistanceMeters(),
+                    spaceX.getAccelerationAverage()).divide(BigDecimal.valueOf(86400), 0, RoundingMode.HALF_UP).toString());
 
             System.out.println("\nWelcome on " + planet.getName() + ". It far from Earth in " + planet.getDistanceLightYears() +
                     " light-years and takes " + daysInFlight + " days");
 
-            System.out.println(String.format("\n\t\tEarth %s ------------------------------> %s %s", Dates.currentDate().toString(), planet.getName(), Dates.arrivalDate(daysInFlight)));
+            System.out.println(String.format("\n\t\tEarth %s ------------------------------> %s %s",
+                    Dates.currentDate().toString(), planet.getName(), Dates.arrivalDate(daysInFlight)));
 
 
             System.out.println("\nCongratulations! Try again? - y or [any key to abort]");
@@ -41,9 +42,6 @@ public class BeginTravel {
         Scanner in = new Scanner(System.in);
         String userInput = in.nextLine();
 
-        if(userInput.equals("y")) {
-            return true;
-        }
-        return false;
+        return userInput.equals("y");
     }
 }

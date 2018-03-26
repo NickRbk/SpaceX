@@ -1,6 +1,6 @@
 package engine;
 
-import engine.type.Engines;
+import engine.type.EEngine;
 
 public class Engine {
 
@@ -9,7 +9,7 @@ public class Engine {
     private float power, acceleration1, acceleration2;
 
     public Engine(String engineType) {
-        for(Engines engine : Engines.values()) {
+        for(EEngine engine : EEngine.values()) {
             if(engineType.equals( engine.getName() )) {
                 this.name = engine.getName();
                 this.height = engine.getHeight();
@@ -27,8 +27,9 @@ public class Engine {
     @Override
     public String toString() {
         return String.format("\tEngine Type: %s, power - %f, dimensions (h: %d, w: %d), " +
-                        "weight - %d, tank space - %d || Acceleration#1 (%f), Acceleration#2 (%f)",
-                name, power, height, width, weight, fuelTankSpace, acceleration1, acceleration2);
+                        "weight - %d, tank space - %d || Acceleration#1 (%f), Acceleration#2 (%f) " +
+                        "|| Fuel consumption = %d",
+                name, power, height, width, weight, fuelTankSpace, acceleration1, acceleration2, fuelConsumption);
     }
 
     public String getName() {
@@ -49,14 +50,6 @@ public class Engine {
 
     public float getPower() {
         return power;
-    }
-
-    public int getFuelConsumption() {
-        return fuelConsumption;
-    }
-
-    public int getFuelTankSpace() {
-        return fuelTankSpace;
     }
 
     public float getAcceleration1() {

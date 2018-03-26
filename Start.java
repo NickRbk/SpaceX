@@ -1,4 +1,4 @@
-import destinations.Planets;
+import destinations.EPlanet;
 import engine.Engine;
 import rocket.Rocket;
 import rocket.SpaceX;
@@ -8,13 +8,13 @@ import utils.UserInteraction;
 
 public final class Start {
     public static void bootstrap() {
-        boolean tryAgain = false;
+        boolean tryAgain;
         do {
             // Ask user for essential parameters for our space travel
             String cabin = UserInteraction.askCabin();
             Engine[] engines = UserInteraction.askEngines();
             FuelTank[] fuelTanks = UserInteraction.askFuelTanks( engines );
-            Planets planet = UserInteraction.askDestination();
+            EPlanet planet = UserInteraction.askDestination();
 
             // Create Rocket with input parameters
             Rocket spaceX = new SpaceX();

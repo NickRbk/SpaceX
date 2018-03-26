@@ -1,6 +1,6 @@
 package rocket.cabin.type;
 
-public enum Cabins {
+public enum ECabin {
     COMFORT("comfort", 3, 20, 900, 5),
     VIP("VIP", 5, 50, 1400, 2),
     DELUX("delux", 5, 70, 2100, 8),
@@ -10,7 +10,7 @@ public enum Cabins {
     private String name;
     private int height, width, weight, capacity;
 
-    Cabins(String name, int height, int width, int weight, int capacity) {
+    ECabin(String name, int height, int width, int weight, int capacity) {
         this.name = name;
         this.height = height;
         this.width = width;

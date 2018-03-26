@@ -1,11 +1,11 @@
 package utils;
 
-import destinations.Planets;
+import destinations.EPlanet;
 import engine.Engine;
-import engine.type.Engines;
-import rocket.cabin.type.Cabins;
+import engine.type.EEngine;
+import rocket.cabin.type.ECabin;
 import rocket.fuelTank.FuelTank;
-import rocket.fuelTank.type.FuelTanks;
+import rocket.fuelTank.type.EFuelTank;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -19,7 +19,7 @@ public class UserInteraction {
         while(true) {
             String userInput = in.nextLine();
 
-            for(Cabins cabin : Cabins.values()) {
+            for(ECabin cabin : ECabin.values()) {
                 if(cabin.getName().equals(userInput)) {
                     return cabin.getName();
                 }
@@ -42,7 +42,7 @@ public class UserInteraction {
 
             int shadowCounter = counter;
 
-            for(Engines engine : Engines.values()) {
+            for(EEngine engine : EEngine.values()) {
                 if(engine.getName().equals(userInput)) {
                     enginesType[counter] = engine.getName();
                     counter++;
@@ -58,7 +58,7 @@ public class UserInteraction {
             }
         }
 
-        boolean additionalEngine = false;
+        boolean additionalEngine;
 
         do {
             if(counter == 5) break;
@@ -72,7 +72,7 @@ public class UserInteraction {
 
                 int shadowCounter = counter;
 
-                for(Engines engine : Engines.values()) {
+                for(EEngine engine : EEngine.values()) {
                     if(engine.getName().equals(userInput)) {
                         enginesType[counter] = engine.getName();
                         ++counter;
@@ -128,7 +128,7 @@ public class UserInteraction {
                     boolean isBigger = false;
                     String userInput = in.nextLine();
 
-                    for(FuelTanks fuelTankType : FuelTanks.values()) {
+                    for(EFuelTank fuelTankType : EFuelTank.values()) {
                         if(userInput.equals(fuelTankType.getName())) {
                             if(fuelTankType.getHeight() > engine.getHeight()
                                     || fuelTankType.getWidth() > engine.getWidth()) {
@@ -168,7 +168,7 @@ public class UserInteraction {
         return fuelTanks;
     }
 
-    public static Planets askDestination() {
+    public static EPlanet askDestination() {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Step 4. Hi, passenger! We've almost finished, choose a planet to travel:" +
@@ -177,7 +177,7 @@ public class UserInteraction {
         while(true) {
             String userInput = in.nextLine();
 
-            for(Planets planet : Planets.values()) {
+            for(EPlanet planet : EPlanet.values()) {
                 if(userInput.equals( planet.getName() )) {
                     return planet;
                 }
