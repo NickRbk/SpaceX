@@ -14,9 +14,8 @@ public class SpaceCalculations {
         BigDecimal part1_1 = BigDecimal.valueOf( SpaceConstants.LIGHT_SPEED).pow(2).multiply(BigDecimal.valueOf(2))
                 .divide(BigDecimal.valueOf(acceleration), 20, RoundingMode.HALF_UP);
 
-//        BigDecimal part1 = distanceMeters.divide(part1_1, 20, RoundingMode.HALF_UP).pow(2).subtract(BigDecimal.valueOf(1)).abs();
         BigDecimal part1 = distanceMeters.divide(part1_1, 20, RoundingMode.HALF_UP).add(BigDecimal.valueOf(1))
-                .pow(2).subtract(BigDecimal.valueOf(1)).abs();
+                .pow(2).subtract(BigDecimal.valueOf(1));
 
         BigDecimal part2 = BigDecimal.valueOf(SpaceConstants.LIGHT_SPEED).pow(2)
                 .divide(BigDecimal.valueOf(acceleration).pow(2), 20, RoundingMode.HALF_UP).multiply(part1);
