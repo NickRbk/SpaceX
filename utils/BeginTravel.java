@@ -41,9 +41,6 @@ public class BeginTravel {
         Scanner in = new Scanner(System.in);
         String userInput = in.nextLine();
 
-        if(userInput.equals("y")) {
-            return true;
-        }
-        return false;
+        return userInput.equals("y");
     }
 }
