@@ -18,17 +18,7 @@ public class BeginTravel {
             spaceX.getFuelTanks();
 
             spaceX.start();
-
-
-            int daysInFlight = Integer.parseInt(SpaceCalculations.observerTravelTime(planet.getDistanceMeters(),
-                    spaceX.getAccelerationAverage()).divide(BigDecimal.valueOf(86400), 0, RoundingMode.HALF_UP).toString());
-
-            System.out.println("\nWelcome on " + planet.getName() + ". It far from Earth in " + planet.getDistanceLightYears() +
-                    " light-years and takes " + daysInFlight + " days");
-
-            System.out.println(String.format("\n\t\tEarth %s ------------------------------> %s %s",
-                    Dates.currentDate().toString(), planet.getName(), Dates.arrivalDate(daysInFlight)));
-
+            getTravelDuration(planet, spaceX.getAccelerationAverage());
 
             System.out.println("\nCongratulations! Try again? - y or [any key to abort]");
             return tryAgain();
@@ -36,6 +26,18 @@ public class BeginTravel {
             System.out.println("\nOoops.. Maybe you`ll be more lucky next time. Try again? - y or [any key to abort]");
             return tryAgain();
         }
+    }
+
+    private static void getTravelDuration(EPlanet planet, float acceleration) {
+        int daysInFlight = Integer.parseInt(SpaceCalculations.observerTravelTime(planet.getDistanceMeters(),
+                acceleration).divide(BigDecimal.valueOf(86400), 0, RoundingMode.HALF_UP).toString());
+
+        System.out.println("\nWelcome on " + planet.getName() + ". It far from Earth in " +
+                planet.getDistanceLightYears() + " light-years and takes " + daysInFlight + " days");
+
+        System.out.println(String.format("\n\t\tEarth %s <------------ %s light-years ------------> %s %s",
+                Dates.currentDate().toString(), planet.getDistanceLightYears(),
+                Dates.arrivalDate(daysInFlight), planet.getName()));
     }
 
     private static boolean tryAgain() {
