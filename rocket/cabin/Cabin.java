@@ -9,15 +9,13 @@ public class Cabin {
     private static Cabin cabin;
 
     private Cabin(String cabinType) {
-        for(ECabin cabin : ECabin.values()) {
-            if(cabinType.equals( cabin.getName() )) {
-                this.name = cabin.getName();
-                this.height = cabin.getHeight();
-                this.width = cabin.getWidth();
-                this.weight = cabin.getWeight();
-                this.capacity = cabin.getCapacity();
-            }
-        }
+        ECabin cabin = ECabin.valueOf(cabinType);
+
+        this.name = cabin.getName();
+        this.height = cabin.getHeight();
+        this.width = cabin.getWidth();
+        this.weight = cabin.getWeight();
+        this.capacity = cabin.getCapacity();
     }
 
     public static Cabin getCabin(String cabinType) {

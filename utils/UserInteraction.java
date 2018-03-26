@@ -21,7 +21,7 @@ public class UserInteraction {
 
             for(ECabin cabin : ECabin.values()) {
                 if(cabin.getName().equals(userInput)) {
-                    return cabin.getName();
+                    return cabin.getName().toUpperCase();
                 }
             }
             System.out.println("ERR -> Sorry, you need to choose from list... Enter valid name");
@@ -44,7 +44,7 @@ public class UserInteraction {
 
             for(EEngine engine : EEngine.values()) {
                 if(engine.getName().equals(userInput)) {
-                    enginesType[counter] = engine.getName();
+                    enginesType[counter] = engine.getName().toUpperCase();
                     counter++;
 
                     if(counter < 3) {
@@ -74,7 +74,7 @@ public class UserInteraction {
 
                 for(EEngine engine : EEngine.values()) {
                     if(engine.getName().equals(userInput)) {
-                        enginesType[counter] = engine.getName();
+                        enginesType[counter] = engine.getName().toUpperCase();
                         ++counter;
                     }
                 }
@@ -137,7 +137,7 @@ public class UserInteraction {
                                 System.out.println( String.format("ERR for engine#%d (%s)-> Sorry, your tank bigger than engine, choose another type: ",
                                         engineNumber, engine.getName()));
                             } else {
-                                fuelTanksType[engineNumber - 1] = userInput;
+                                fuelTanksType[engineNumber - 1] = userInput.toUpperCase();
                                 flag = false;
                             }
                         }
