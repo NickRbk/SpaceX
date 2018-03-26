@@ -14,7 +14,7 @@ All calculations for receiving time of journey (for observers) and
 fuel needs were made by using `BigDecimal`.
 
 _On [site](https://phys.org/news/2016-02-nasa-mars-days.html) says
-that it's possible to reach Mars in 3 days_, and our calculations in our app
+that it's possible to reach Mars in 3 days_, and calculations in our app
 near that (our app show ~2 days). 
 
 If you have enough fuel, you receive additional info about your trip.
