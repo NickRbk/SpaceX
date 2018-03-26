@@ -7,15 +7,13 @@ public class FuelTank {
     private int height, width, weight, capacity;
 
     public FuelTank(String fuelTankType) {
-        for(EFuelTank fuelTank : EFuelTank.values()) {
-            if(fuelTankType.equals( fuelTank.getName() )) {
-                this.name = fuelTank.getName();
-                this.height = fuelTank.getHeight();
-                this.width = fuelTank.getWidth();
-                this.weight = fuelTank.getWeight();
-                this.capacity = fuelTank.getCapacity();
-            }
-        }
+        EFuelTank fuelTank = EFuelTank.valueOf(fuelTankType);
+
+        this.name = fuelTank.getName();
+        this.height = fuelTank.getHeight();
+        this.width = fuelTank.getWidth();
+        this.weight = fuelTank.getWeight();
+        this.capacity = fuelTank.getCapacity();
     }
 
     @Override

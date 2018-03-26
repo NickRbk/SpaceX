@@ -3,7 +3,7 @@ package engine.type;
 public enum EEngine {
     SLOW("slow", 100, 150, 3000, 0.4f, 140, 15000, 9.6f, 11.2f),
     ECONOMY("economy", 120, 170, 2700, 0.6f, 100, 20400, 9.7f, 11.5f),
-    SUPER_FAST("superFast", 160, 100, 1200, 0.8f, 250, 12800, 12.6f, 18.5f),
+    SUPERFAST("superFast", 160, 100, 1200, 0.8f, 250, 12800, 12.6f, 18.5f),
     FAST("fast", 140, 110, 1700, 0.9f, 230, 15400, 10.2f, 14.5f),
     OLD("old", 200, 250, 4000, 0.2f, 300, 50000, 4.7f, 4.9f);
 
