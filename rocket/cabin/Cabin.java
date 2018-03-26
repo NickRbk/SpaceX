@@ -33,28 +33,12 @@ public class Cabin {
                 name, capacity, height, width, weight);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
     public int getWeight() {
         return weight;
     }
 
     public int getCapacity() {
         return capacity;
-    }
-
-    public static Cabin getCabin() {
-        return cabin;
     }
 
     public void start(Engine[] engines) {
