@@ -24,7 +24,7 @@ public class SpaceCalculations {
 
     // Calculate spacecraft maximum velocity
     // Cuz formula for calc big it divided to several parts in code below
-    public static BigDecimal maximumVelocity(BigDecimal distanceMeters, float acceleration) {
+    private static BigDecimal maximumVelocity(BigDecimal distanceMeters, float acceleration) {
 
         BigDecimal observerTravelTime = observerTravelTime(distanceMeters, acceleration);
 
