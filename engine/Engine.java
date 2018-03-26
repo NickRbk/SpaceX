@@ -51,14 +51,6 @@ public class Engine {
         return power;
     }
 
-    public int getFuelConsumption() {
-        return fuelConsumption;
-    }
-
-    public int getFuelTankSpace() {
-        return fuelTankSpace;
-    }
-
     public float getAcceleration1() {
         return acceleration1;
     }
