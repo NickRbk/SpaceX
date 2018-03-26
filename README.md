@@ -20,7 +20,15 @@ At the end you will be offered to try again.
 #### How to start up ?
 - git clone
 - compile App.java by ```javac App.java```
-- start app with ```java App```
+##### after that you can start app in 2 way:
+1# start app with ```java App```
+
+2# make a jar file in 2 steps and start:
+         
+         echo "Main-Class: App"> manifest.mf
+         jar cmf manifest.mf App.jar *
+         java -jar App.jar
+
 
 
 ##### Additional resources:
