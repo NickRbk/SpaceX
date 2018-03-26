@@ -1,6 +1,6 @@
 package rocket.fuelTank.type;
 
-public enum FuelTanks {
+public enum EFuelTank {
     SMALL("small", 90, 2000, 95, 22600),
     MEDIUM("medium", 110, 2400, 160, 27600),
     LARGE("large", 138, 2900, 110, 37940),
@@ -10,7 +10,7 @@ public enum FuelTanks {
     private String name;
     private int height, weight, width, capacity;
 
-    FuelTanks(String name, int height, int weight, int width, int capacity) {
+    EFuelTank(String name, int height, int weight, int width, int capacity) {
         this.name = name;
         this.height = height;
         this.weight = weight;

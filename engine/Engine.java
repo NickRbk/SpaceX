@@ -1,6 +1,6 @@
 package engine;
 
-import engine.type.Engines;
+import engine.type.EEngine;
 
 public class Engine {
 
@@ -9,7 +9,7 @@ public class Engine {
     private float power, acceleration1, acceleration2;
 
     public Engine(String engineType) {
-        for(Engines engine : Engines.values()) {
+        for(EEngine engine : EEngine.values()) {
             if(engineType.equals( engine.getName() )) {
                 this.name = engine.getName();
                 this.height = engine.getHeight();

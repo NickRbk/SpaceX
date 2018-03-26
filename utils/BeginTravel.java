@@ -1,6 +1,6 @@
 package utils;
 
-import destinations.Planets;
+import destinations.EPlanet;
 import rocket.Rocket;
 import spaceCalculations.SpaceCalculations;
 
@@ -9,7 +9,7 @@ import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class BeginTravel {
-    public static boolean test(Planets planet, Rocket spaceX) {
+    public static boolean test(EPlanet planet, Rocket spaceX) {
         if( spaceX.isPotentiallyFlyable(planet.getDistanceMeters(), spaceX.getAccelerationAverage(),
                 spaceX.getTotalWeight(), spaceX.getEfficiencyAverage(),spaceX.getTotalFuel()) ) {
 
