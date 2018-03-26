@@ -24,18 +24,6 @@ public class FuelTank {
                 name, capacity, height, width, weight);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
     public int getWeight() {
         return weight;
     }
