@@ -86,24 +86,21 @@ public class Rocket implements IPotentiallyFlyable {
         return total / counts;
     }
 
-    public Cabin getCabin() {
+    public void getCabin() {
         System.out.println(cabin.toString());
-        return cabin;
     }
 
-    public Engine[] getEngines() {
+    public void getEngines() {
         System.out.println("\nYour spaceship has the below engines: ");
         for(Engine engine : engines) {
             System.out.println(engine.toString());
         }
-        return engines;
     }
 
-    public FuelTank[] getFuelTanks() {
+    public void getFuelTanks() {
         System.out.println("\nYour spaceship has the below fuel tanks: ");
         for(FuelTank fuelTank : fuelTanks) {
             System.out.println(fuelTank.toString());
         }
-        return fuelTanks;
     }
 }
