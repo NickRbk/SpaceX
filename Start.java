@@ -8,7 +8,7 @@ import utils.UserInteraction;
 
 public final class Start {
     public static void bootstrap() {
-        boolean tryAgain = false;
+        boolean tryAgain;
         do {
             // Ask user for essential parameters for our space travel
             String cabin = UserInteraction.askCabin();

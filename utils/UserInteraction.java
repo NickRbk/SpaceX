@@ -58,7 +58,7 @@ public class UserInteraction {
             }
         }
 
-        boolean additionalEngine = false;
+        boolean additionalEngine;
 
         do {
             if(counter == 5) break;
