@@ -33,9 +33,9 @@ public class BeginTravel {
                 acceleration).divide(BigDecimal.valueOf(86400), 0, RoundingMode.HALF_UP).toString());
 
         System.out.println("\nWelcome on " + planet.getName() + ". It far from Earth in " +
-                planet.getDistanceLightYears() + " light-years and takes " + daysInFlight + " days");
+                planet.getDistanceLightYears() + " astronomical units and takes " + daysInFlight + " days");
 
-        System.out.println(String.format("\n\t\tEarth %s <------------ %s light-years ------------> %s %s",
+        System.out.println(String.format("\n\t\tEarth %s <------------ %s AU ------------> %s %s",
                 Dates.currentDate().toString(), planet.getDistanceLightYears(),
                 Dates.arrivalDate(daysInFlight), planet.getName()));
     }
