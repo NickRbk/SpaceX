@@ -1,4 +1,4 @@
-package destinations;
+package destination;
 
 import java.math.BigDecimal;
 
@@ -20,7 +20,7 @@ public enum EPlanet {
     }
 
     public BigDecimal getDistanceMeters() {
-        return BigDecimal.valueOf(distance).multiply(BigDecimal.valueOf(SpaceConstants.AU));
+        return BigDecimal.valueOf(distance).multiply(BigDecimal.valueOf(SpaceConstant.AU));
     }
 
     public String getName() {
