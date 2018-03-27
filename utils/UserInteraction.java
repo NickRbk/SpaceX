@@ -1,6 +1,6 @@
 package utils;
 
-import destinations.EPlanet;
+import destination.EPlanet;
 import engine.Engine;
 import engine.type.EEngine;
 import rocket.cabin.type.ECabin;

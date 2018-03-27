@@ -1,8 +1,7 @@
 package utils;
 
-import destinations.EPlanet;
+import destination.EPlanet;
 import rocket.Rocket;
-import spaceCalculations.SpaceCalculations;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -29,7 +28,7 @@ public class BeginTravel {
     }
 
     private static void getTravelDuration(EPlanet planet, float acceleration) {
-        int daysInFlight = Integer.parseInt(SpaceCalculations.observerTravelTime(planet.getDistanceMeters(),
+        int daysInFlight = Integer.parseInt(SpaceCalculation.observerTravelTime(planet.getDistanceMeters(),
                 acceleration).divide(BigDecimal.valueOf(3600), 0, RoundingMode.HALF_UP).toString());
 
         System.out.println("\nWelcome on " + planet.getName() + ". It far from Earth in " +

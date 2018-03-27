@@ -1,4 +1,4 @@
-import destinations.EPlanet;
+import destination.EPlanet;
 import engine.Engine;
 import rocket.Rocket;
 import rocket.SpaceX;

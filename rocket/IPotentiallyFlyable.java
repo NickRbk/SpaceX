@@ -1,6 +1,6 @@
 package rocket;
 
-import spaceCalculations.SpaceCalculations;
+import utils.SpaceCalculation;
 
 import java.math.BigDecimal;
 
@@ -8,7 +8,7 @@ public interface IPotentiallyFlyable {
     default boolean isPotentiallyFlyable(BigDecimal distanceMeters, float acceleration, int totalWeight,
                                          float efficiency, int totalFuel) {
 
-        BigDecimal fuelNeeds = SpaceCalculations.fuelNeeds(distanceMeters, acceleration, totalWeight, efficiency);
+        BigDecimal fuelNeeds = SpaceCalculation.fuelNeeds(distanceMeters, acceleration, totalWeight, efficiency);
 
         if(BigDecimal.valueOf(totalFuel).compareTo(fuelNeeds) > 0) {
             System.out.println("\n\tYou have enough fuel for travel, good luck!");
