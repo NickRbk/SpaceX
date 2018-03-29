@@ -2,7 +2,7 @@ package src.util;
 
 import src.calculation.SpaceTravel;
 import src.destination.Planets;
-import src.rocket.impl.AbstractRocket;
+import src.model.rocket.impl.AbstractRocket;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

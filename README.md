@@ -9,7 +9,7 @@ Calculations were made with formulas provided on this
 At first, you create spaceship with 3 essential parts:
 - cabin (predefined types: comfort, VIP, delux, cosy, economy);
 - engine (from 3 to 5 instances) (predefined types: slow, economy, superFast, fast, old);
-- fuel tank (for each src.engine) (predefined types: small, medium, large, huge. titanic).
+- fuel tank (for each engine) (predefined types: small, medium, large, huge. titanic).
 
 All calculations for receiving time of journey (for observers) and 
 fuel needs were made by using `BigDecimal`.

@@ -1,4 +1,4 @@
-package src.cabin.type;
+package src.model.cabin.type;
 
 public enum Cabins {
     COMFORT("comfort", 3, 20, 900, 5),

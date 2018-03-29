@@ -1,10 +1,10 @@
 package src;
 
 import src.destination.Planets;
-import src.engine.Engine;
-import src.fuelTank.FuelTank;
-import src.rocket.impl.AbstractRocket;
-import src.rocket.impl.SpaceX;
+import src.model.engine.Engine;
+import src.model.fuelTank.FuelTank;
+import src.model.rocket.impl.AbstractRocket;
+import src.model.rocket.impl.SpaceX;
 import src.util.BeginTravel;
 import src.util.UserInteraction;
 

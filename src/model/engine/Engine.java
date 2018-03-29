@@ -1,4 +1,4 @@
-package src.engine;
+package src.model.engine;
 
 public interface Engine {
     String getName();

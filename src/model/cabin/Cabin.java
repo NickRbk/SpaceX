@@ -1,6 +1,6 @@
-package src.cabin;
+package src.model.cabin;
 
-import src.engine.Engine;
+import src.model.engine.Engine;
 
 public interface Cabin {
     String getName();

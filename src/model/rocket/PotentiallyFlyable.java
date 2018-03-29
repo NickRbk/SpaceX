@@ -1,4 +1,4 @@
-package src.rocket;
+package src.model.rocket;
 
 import src.calculation.SpaceTravel;
 

@@ -1,7 +1,7 @@
-package src.rocket;
+package src.model.rocket;
 
-import src.engine.Engine;
-import src.fuelTank.FuelTank;
+import src.model.engine.Engine;
+import src.model.fuelTank.FuelTank;
 
 public interface Rocket {
     void assembleRocket(String cabin, Engine[] engines, FuelTank[] fuelTanks);

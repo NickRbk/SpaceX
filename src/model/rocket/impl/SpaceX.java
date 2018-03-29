@@ -1,4 +1,4 @@
-package src.rocket.impl;
+package src.model.rocket.impl;
 
 public class SpaceX extends AbstractRocket {
 

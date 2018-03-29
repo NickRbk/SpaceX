@@ -1,11 +1,11 @@
-package src.rocket.impl;
+package src.model.rocket.impl;
 
-import src.cabin.Cabin;
-import src.cabin.impl.CabinModel;
-import src.engine.Engine;
-import src.fuelTank.FuelTank;
-import src.rocket.PotentiallyFlyable;
-import src.rocket.Rocket;
+import src.model.cabin.Cabin;
+import src.model.cabin.impl.CabinModel;
+import src.model.engine.Engine;
+import src.model.fuelTank.FuelTank;
+import src.model.rocket.PotentiallyFlyable;
+import src.model.rocket.Rocket;
 
 public abstract class AbstractRocket implements Rocket, PotentiallyFlyable {
 

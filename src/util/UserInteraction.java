@@ -1,13 +1,13 @@
 package src.util;
 
 import src.destination.Planets;
-import src.engine.Engine;
-import src.engine.impl.EngineModel;
-import src.engine.type.Engines;
-import src.cabin.type.Cabins;
-import src.fuelTank.FuelTank;
-import src.fuelTank.impl.FuelTankModel;
-import src.fuelTank.type.FuelTanks;
+import src.model.engine.Engine;
+import src.model.engine.impl.EngineModel;
+import src.model.engine.type.Engines;
+import src.model.cabin.type.Cabins;
+import src.model.fuelTank.FuelTank;
+import src.model.fuelTank.impl.FuelTankModel;
+import src.model.fuelTank.type.FuelTanks;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package src.fuelTank;
+package src.model.fuelTank;
 
 public interface FuelTank {
     int getWeight();

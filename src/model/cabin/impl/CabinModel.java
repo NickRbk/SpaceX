@@ -1,8 +1,8 @@
-package src.cabin.impl;
+package src.model.cabin.impl;
 
-import src.cabin.Cabin;
-import src.cabin.type.Cabins;
-import src.engine.Engine;
+import src.model.cabin.Cabin;
+import src.model.cabin.type.Cabins;
+import src.model.engine.Engine;
 
 public class CabinModel implements Cabin {
     private String name;

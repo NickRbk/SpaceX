@@ -1,7 +1,7 @@
-package src.fuelTank.impl;
+package src.model.fuelTank.impl;
 
-import src.fuelTank.FuelTank;
-import src.fuelTank.type.FuelTanks;
+import src.model.fuelTank.FuelTank;
+import src.model.fuelTank.type.FuelTanks;
 
 public class FuelTankModel implements FuelTank {
     private String name;

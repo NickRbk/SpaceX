@@ -1,7 +1,7 @@
-package src.engine.impl;
+package src.model.engine.impl;
 
-import src.engine.Engine;
-import src.engine.type.Engines;
+import src.model.engine.Engine;
+import src.model.engine.type.Engines;
 
 public class EngineModel implements Engine {
 
