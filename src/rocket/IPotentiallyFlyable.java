@@ -1,6 +1,6 @@
-package rocket;
+package src.rocket;
 
-import utils.SpaceCalculation;
+import src.utils.SpaceCalculation;
 
 import java.math.BigDecimal;
 

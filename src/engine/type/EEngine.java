@@ -1,4 +1,4 @@
-package engine.type;
+package src.engine.type;
 
 public enum EEngine {
     SLOW("slow", 100, 150, 3000, 0.4f, 140, 15000, 9.6f, 11.2f),

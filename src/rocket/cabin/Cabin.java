@@ -1,7 +1,7 @@
-package rocket.cabin;
+package src.rocket.cabin;
 
-import engine.Engine;
-import rocket.cabin.type.ECabin;
+import src.engine.Engine;
+import src.rocket.cabin.type.ECabin;
 
 public class Cabin {
     private String name;

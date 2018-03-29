@@ -1,10 +1,12 @@
-import destination.EPlanet;
-import engine.Engine;
-import rocket.Rocket;
-import rocket.SpaceX;
-import rocket.fuelTank.FuelTank;
-import utils.BeginTravel;
-import utils.UserInteraction;
+package src;
+
+import src.destination.EPlanet;
+import src.engine.Engine;
+import src.rocket.Rocket;
+import src.rocket.SpaceX;
+import src.rocket.fuelTank.FuelTank;
+import src.utils.BeginTravel;
+import src.utils.UserInteraction;
 
 public final class Start {
     public static void bootstrap() {

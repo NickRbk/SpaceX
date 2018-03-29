@@ -1,8 +1,8 @@
-package rocket;
+package src.rocket;
 
-import engine.Engine;
-import rocket.cabin.Cabin;
-import rocket.fuelTank.FuelTank;
+import src.engine.Engine;
+import src.rocket.cabin.Cabin;
+import src.rocket.fuelTank.FuelTank;
 
 public class Rocket implements IPotentiallyFlyable {
 

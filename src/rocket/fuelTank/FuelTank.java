@@ -1,6 +1,6 @@
-package rocket.fuelTank;
+package src.rocket.fuelTank;
 
-import rocket.fuelTank.type.EFuelTank;
+import src.rocket.fuelTank.type.EFuelTank;
 
 public class FuelTank {
     private String name;

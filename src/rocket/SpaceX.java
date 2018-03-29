@@ -1,4 +1,4 @@
-package rocket;
+package src.rocket;
 
 public class SpaceX extends Rocket {
 

@@ -1,7 +1,7 @@
-package utils;
+package src.utils;
 
-import destination.EPlanet;
-import rocket.Rocket;
+import src.destination.EPlanet;
+import src.rocket.Rocket;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

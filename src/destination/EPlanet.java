@@ -1,4 +1,4 @@
-package destination;
+package src.destination;
 
 import java.math.BigDecimal;
 
@@ -14,7 +14,7 @@ public enum EPlanet {
         this.name = name;
     }
 
-    // set getters for destination and name
+    // set getters for src.destination and name
     public float getDistanceLightYears() {
         return distance;
     }

@@ -7,8 +7,8 @@ Calculations were made with formulas provided on this [site](http://nathangeffen
 
 At first, you create spaceship with 3 essential parts:
 - cabin (predefined types: comfort, VIP, delux, cosy, economy);
-- engine (from 3 to 5 instances) (predefined types: slow, economy, superFast, fast, old);
-- fuel tank (for each engine) (predefined types: small, medium, large, huge. titanic).
+- src.engine (from 3 to 5 instances) (predefined types: slow, economy, superFast, fast, old);
+- fuel tank (for each src.engine) (predefined types: small, medium, large, huge. titanic).
 
 All calculations for receiving time of journey (for observers) and 
 fuel needs were made by using `BigDecimal`.
@@ -23,15 +23,15 @@ At the end you will be offered to try again.
 
 #### How to start up ?
 - git clone
-- compile App.java by ```javac App.java```
+- compile src.App.java by ```javac src.App.java```
 ##### after that you can start app in 2 ways:
-1# start app with ```java App```
+1# start app with ```java src.App```
 
 2# make a jar file in 2 steps and start:
          
-         echo "Main-Class: App"> manifest.mf
-         jar cmf manifest.mf App.jar *
-         java -jar App.jar
+         echo "Main-Class: src.App"> manifest.mf
+         jar cmf manifest.mf src.App.jar *
+         java -jar src.App.jar
 
 
 

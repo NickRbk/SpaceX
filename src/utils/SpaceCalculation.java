@@ -1,6 +1,6 @@
-package utils;
+package src.utils;
 
-import destination.SpaceConstant;
+import src.destination.SpaceConstant;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

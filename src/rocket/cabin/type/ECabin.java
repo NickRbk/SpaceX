@@ -1,4 +1,4 @@
-package rocket.cabin.type;
+package src.rocket.cabin.type;
 
 public enum ECabin {
     COMFORT("comfort", 3, 20, 900, 5),

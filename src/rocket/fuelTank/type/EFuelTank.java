@@ -1,4 +1,4 @@
-package rocket.fuelTank.type;
+package src.rocket.fuelTank.type;
 
 public enum EFuelTank {
     SMALL("small", 90, 2000, 95, 320),
