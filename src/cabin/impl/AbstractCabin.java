@@ -1,8 +1,8 @@
 package src.cabin.impl;
 
 import src.cabin.Cabin;
-import src.engine.Engine;
 import src.cabin.type.Cabins;
+import src.engine.Engine;
 
 public class AbstractCabin implements Cabin {
     private String name;

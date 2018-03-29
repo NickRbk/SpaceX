@@ -2,6 +2,7 @@ package src.util;
 
 import src.destination.Planets;
 import src.engine.Engine;
+import src.engine.impl.AbstractEngine;
 import src.engine.type.Engines;
 import src.cabin.type.Cabins;
 import src.fuelTank.FuelTank;
@@ -28,7 +29,7 @@ public class UserInteraction {
         }
     }
 
-    public static Engine[] askEngines() {
+    public static AbstractEngine[] askEngines() {
         Scanner in = new Scanner(System.in);
 
         int counter = 0;
@@ -91,18 +92,18 @@ public class UserInteraction {
 
         } while(additionalEngine);
 
-        Engine[] engines = new Engine[ enginesType.length ];
+        AbstractEngine[] engines = new AbstractEngine[ enginesType.length ];
 
         for(int i = 0; i < enginesType.length ; i++) {
             if(enginesType[i] != null) {
-                engines[i] = new Engine( enginesType[i] );
+                engines[i] = new AbstractEngine( enginesType[i] );
             }
         }
 
         // remove null from array
         engines = Arrays.stream(engines)
                 .filter(s -> (s != null))
-                .toArray(Engine[]::new);
+                .toArray(AbstractEngine[]::new);
 
         return engines;
     }
