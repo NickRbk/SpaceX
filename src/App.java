@@ -2,7 +2,7 @@ package src;
 
 import src.destination.Planets;
 import src.model.engine.Engine;
-import src.model.fuelTank.FuelTank;
+import src.model.fueltank.FuelTank;
 import src.model.rocket.impl.AbstractRocket;
 import src.model.rocket.impl.SpaceX;
 import src.util.BeginTravel;

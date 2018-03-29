@@ -1,4 +1,4 @@
-package src.model.fuelTank.type;
+package src.model.fueltank.type;
 
 public enum FuelTanks {
     SMALL("small", 90, 2000, 95, 320),

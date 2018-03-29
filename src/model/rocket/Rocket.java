@@ -1,7 +1,7 @@
 package src.model.rocket;
 
 import src.model.engine.Engine;
-import src.model.fuelTank.FuelTank;
+import src.model.fueltank.FuelTank;
 
 public interface Rocket {
     void assembleRocket(String cabin, Engine[] engines, FuelTank[] fuelTanks);
