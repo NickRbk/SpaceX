@@ -1,7 +1,7 @@
 package src.rocket.impl;
 
 import src.cabin.Cabin;
-import src.cabin.impl.AbstractCabin;
+import src.cabin.impl.CabinModel;
 import src.engine.Engine;
 import src.fuelTank.FuelTank;
 import src.rocket.PotentiallyFlyable;
@@ -10,7 +10,6 @@ import src.rocket.Rocket;
 public abstract class AbstractRocket implements Rocket, PotentiallyFlyable {
 
     private int weight;
-
     private Cabin cabin;
     private Engine[] engines;
     private FuelTank[] fuelTanks;
@@ -33,7 +32,7 @@ public abstract class AbstractRocket implements Rocket, PotentiallyFlyable {
 
     private void setCabin(String cabinType) {
         if(this.cabin == null) {
-            this.cabin = new AbstractCabin(cabinType);
+            this.cabin = new CabinModel(cabinType);
         } else {
             System.out.println(String.format("Sorry, your AbstractRocket has the cabin '%s'", this.cabin.getName()));
         }

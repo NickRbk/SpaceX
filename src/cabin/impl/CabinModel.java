@@ -4,11 +4,11 @@ import src.cabin.Cabin;
 import src.cabin.type.Cabins;
 import src.engine.Engine;
 
-public class AbstractCabin implements Cabin {
+public class CabinModel implements Cabin {
     private String name;
     private int height, width, weight, capacity;
 
-    public AbstractCabin(String cabinType) {
+    public CabinModel(String cabinType) {
         Cabins cabin = Cabins.valueOf(cabinType);
 
         this.name = cabin.getName();

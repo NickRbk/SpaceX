@@ -2,10 +2,11 @@ package src.util;
 
 import src.destination.Planets;
 import src.engine.Engine;
-import src.engine.impl.AbstractEngine;
+import src.engine.impl.EngineModel;
 import src.engine.type.Engines;
 import src.cabin.type.Cabins;
 import src.fuelTank.FuelTank;
+import src.fuelTank.impl.FuelTankModel;
 import src.fuelTank.type.FuelTanks;
 
 import java.util.Arrays;
@@ -29,7 +30,7 @@ public class UserInteraction {
         }
     }
 
-    public static AbstractEngine[] askEngines() {
+    public static Engine[] askEngines() {
         Scanner in = new Scanner(System.in);
 
         int counter = 0;
@@ -92,18 +93,18 @@ public class UserInteraction {
 
         } while(additionalEngine);
 
-        AbstractEngine[] engines = new AbstractEngine[ enginesType.length ];
+        Engine[] engines = new EngineModel[ enginesType.length ];
 
         for(int i = 0; i < enginesType.length ; i++) {
             if(enginesType[i] != null) {
-                engines[i] = new AbstractEngine( enginesType[i] );
+                engines[i] = new EngineModel( enginesType[i] );
             }
         }
 
         // remove null from array
         engines = Arrays.stream(engines)
                 .filter(s -> (s != null))
-                .toArray(AbstractEngine[]::new);
+                .toArray(EngineModel[]::new);
 
         return engines;
     }
@@ -111,7 +112,7 @@ public class UserInteraction {
 
 
     public static FuelTank[] askFuelTanks(Engine[] engines) {
-        String fuelTanksType[] = new String[ engines.length ];
+        String[] fuelTanksType = new String[ engines.length ];
         int engineNumber = 0;
 
         Scanner in = new Scanner(System.in);
@@ -153,18 +154,18 @@ public class UserInteraction {
             }
         }
 
-        FuelTank[] fuelTanks = new FuelTank[ engines.length ];
+        FuelTank[] fuelTanks = new FuelTankModel[ engines.length ];
 
         for(int i = 0; i < fuelTanksType.length ; i++) {
             if(fuelTanksType[i] != null) {
-                fuelTanks[i] = new FuelTank( fuelTanksType[i] );
+                fuelTanks[i] = new FuelTankModel( fuelTanksType[i] );
             }
         }
 
         // remove null from array
         fuelTanks = Arrays.stream(fuelTanks)
                 .filter(s -> (s != null))
-                .toArray(FuelTank[]::new);
+                .toArray(FuelTankModel[]::new);
 
         return fuelTanks;
     }

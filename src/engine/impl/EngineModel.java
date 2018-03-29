@@ -3,13 +3,13 @@ package src.engine.impl;
 import src.engine.Engine;
 import src.engine.type.Engines;
 
-public class AbstractEngine implements Engine {
+public class EngineModel implements Engine {
 
     private String name;
     private int height, width, weight, fuelConsumption, fuelTankSpace;
     private float power, acceleration1, acceleration2;
 
-    public AbstractEngine(String engineType) {
+    public EngineModel(String engineType) {
         Engines engine = Engines.valueOf(engineType);
 
         this.name = engine.getName();
