@@ -1,11 +1,11 @@
-package src.utils;
+package src.util;
 
-import src.destination.EPlanet;
+import src.destination.Planets;
 import src.engine.Engine;
-import src.engine.type.EEngine;
-import src.rocket.cabin.type.ECabin;
-import src.rocket.fuelTank.FuelTank;
-import src.rocket.fuelTank.type.EFuelTank;
+import src.engine.type.Engines;
+import src.cabin.type.Cabins;
+import src.fuelTank.FuelTank;
+import src.fuelTank.type.FuelTanks;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -19,7 +19,7 @@ public class UserInteraction {
         while(true) {
             String userInput = in.nextLine();
 
-            for(ECabin cabin : ECabin.values()) {
+            for(Cabins cabin : Cabins.values()) {
                 if(cabin.getName().equals(userInput)) {
                     return cabin.getName().toUpperCase();
                 }
@@ -42,13 +42,13 @@ public class UserInteraction {
 
             int shadowCounter = counter;
 
-            for(EEngine engine : EEngine.values()) {
+            for(Engines engine : Engines.values()) {
                 if(engine.getName().equals(userInput)) {
                     enginesType[counter] = engine.getName().toUpperCase();
                     counter++;
 
                     if(counter < 3) {
-                        System.out.println("Select one more src.engine: " + "(" + counter + " | 3)");
+                        System.out.println("Select one more engine: " + "(" + counter + " | 3)");
                     }
                 }
             }
@@ -62,17 +62,17 @@ public class UserInteraction {
 
         do {
             if(counter == 5) break;
-            System.out.println("Would you like more src.engine? - y or [any key to abort]");
+            System.out.println("Would you like more engine? - y or [any key to abort]");
             String answer = in.nextLine();
 
             if(answer.equals("y") && counter < 5) {
                 additionalEngine = true;
-                System.out.println("Select one more src.engine: " + "(" + counter + " | " + (counter + 1) + ")");
+                System.out.println("Select one more engine: " + "(" + counter + " | " + (counter + 1) + ")");
                 String userInput = in.nextLine();
 
                 int shadowCounter = counter;
 
-                for(EEngine engine : EEngine.values()) {
+                for(Engines engine : Engines.values()) {
                     if(engine.getName().equals(userInput)) {
                         enginesType[counter] = engine.getName().toUpperCase();
                         ++counter;
@@ -122,19 +122,19 @@ public class UserInteraction {
             if(engine != null) {
                 boolean flag = true;
 
-                System.out.println( String.format("Select fuel tanks to your src.engine#%d (%s)", engineNumber, engine.getName()) );
+                System.out.println( String.format("Select fuel tanks to your engine#%d (%s)", engineNumber, engine.getName()) );
 
                 while(flag) {
                     boolean isBigger = false;
                     String userInput = in.nextLine();
 
-                    for(EFuelTank fuelTankType : EFuelTank.values()) {
+                    for(FuelTanks fuelTankType : FuelTanks.values()) {
                         if(userInput.equals(fuelTankType.getName())) {
                             if(fuelTankType.getHeight() > engine.getHeight()
                                     || fuelTankType.getWidth() > engine.getWidth()) {
 
                                 isBigger = true;
-                                System.out.println( String.format("ERR for src.engine#%d (%s)-> Sorry, your tank bigger than src.engine, choose another type: ",
+                                System.out.println( String.format("ERR for engine#%d (%s)-> Sorry, your tank bigger than engine, choose another type: ",
                                         engineNumber, engine.getName()));
                             } else {
                                 fuelTanksType[engineNumber - 1] = userInput.toUpperCase();
@@ -168,7 +168,7 @@ public class UserInteraction {
         return fuelTanks;
     }
 
-    public static EPlanet askDestination() {
+    public static Planets askDestination() {
         Scanner in = new Scanner(System.in);
 
         System.out.println("\nStep 4. Hi, passenger! We've almost finished, choose a planet to travel:" +
@@ -177,7 +177,7 @@ public class UserInteraction {
         while(true) {
             String userInput = in.nextLine();
 
-            for(EPlanet planet : EPlanet.values()) {
+            for(Planets planet : Planets.values()) {
                 if(userInput.equals( planet.getName() )) {
                     return planet;
                 }

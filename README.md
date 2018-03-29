@@ -3,11 +3,12 @@
 
 #### Description
 This app simulates space travel and calculates time you need to achieve some Planet.
-Calculations were made with formulas provided on this [site](http://nathangeffen.webfactional.com/spacetravel/spacetravel.php).
+Calculations were made with formulas provided on this
+ [site](http://nathangeffen.webfactional.com/spacetravel/spacetravel.php).
 
 At first, you create spaceship with 3 essential parts:
 - cabin (predefined types: comfort, VIP, delux, cosy, economy);
-- src.engine (from 3 to 5 instances) (predefined types: slow, economy, superFast, fast, old);
+- engine (from 3 to 5 instances) (predefined types: slow, economy, superFast, fast, old);
 - fuel tank (for each src.engine) (predefined types: small, medium, large, huge. titanic).
 
 All calculations for receiving time of journey (for observers) and 
@@ -23,15 +24,16 @@ At the end you will be offered to try again.
 
 #### How to start up ?
 - git clone
-- compile src.App.java by ```javac src.App.java```
+- enter to src\ package ```cd src```
+- compile App.java by ```javac App.java```
 ##### after that you can start app in 2 ways:
 1# start app with ```java src.App```
 
 2# make a jar file in 2 steps and start:
          
-         echo "Main-Class: src.App"> manifest.mf
-         jar cmf manifest.mf src.App.jar *
-         java -jar src.App.jar
+         echo "Main-Class: App"> manifest.mf
+         jar cmf manifest.mf App.jar *
+         java -jar App.jar
 
 
 

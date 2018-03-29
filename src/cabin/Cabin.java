@@ -1,7 +1,7 @@
-package src.rocket.cabin;
+package src.cabin;
 
 import src.engine.Engine;
-import src.rocket.cabin.type.ECabin;
+import src.cabin.type.Cabins;
 
 public class Cabin {
     private String name;
@@ -9,7 +9,7 @@ public class Cabin {
     private static Cabin cabin;
 
     private Cabin(String cabinType) {
-        ECabin cabin = ECabin.valueOf(cabinType);
+        Cabins cabin = Cabins.valueOf(cabinType);
 
         this.name = cabin.getName();
         this.height = cabin.getHeight();

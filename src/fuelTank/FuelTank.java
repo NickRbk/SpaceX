@@ -1,13 +1,13 @@
-package src.rocket.fuelTank;
+package src.fuelTank;
 
-import src.rocket.fuelTank.type.EFuelTank;
+import src.fuelTank.type.FuelTanks;
 
 public class FuelTank {
     private String name;
     private int height, width, weight, capacity;
 
     public FuelTank(String fuelTankType) {
-        EFuelTank fuelTank = EFuelTank.valueOf(fuelTankType);
+        FuelTanks fuelTank = FuelTanks.valueOf(fuelTankType);
 
         this.name = fuelTank.getName();
         this.height = fuelTank.getHeight();

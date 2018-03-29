@@ -1,4 +1,4 @@
-package src.destination;
+package src.calculation;
 
 public final class SpaceConstant {
     public static final long LIGHT_SPEED = 299792458L;

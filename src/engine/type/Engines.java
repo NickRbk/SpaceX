@@ -1,6 +1,6 @@
 package src.engine.type;
 
-public enum EEngine {
+public enum Engines {
     SLOW("slow", 100, 150, 3000, 0.4f, 140, 15000, 9.6f, 11.2f),
     ECONOMY("economy", 120, 170, 2700, 0.6f, 100, 20400, 9.7f, 11.5f),
     SUPERFAST("superFast", 160, 100, 1200, 0.8f, 250, 12800, 12.6f, 18.5f),
@@ -11,7 +11,7 @@ public enum EEngine {
     private int height, width, weight, fuelConsumption, fuelTankSpace;
     private float power, acceleration1, acceleration2;
 
-    EEngine(String name, int height, int width, int weight, float power, int fuelConsumption,
+    Engines(String name, int height, int width, int weight, float power, int fuelConsumption,
             int fuelTankSpace, float acceleration1, float acceleration2) {
         this.name = name;
         this.height = height;
