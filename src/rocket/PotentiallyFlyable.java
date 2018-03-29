@@ -4,7 +4,7 @@ import src.calculation.SpaceTravel;
 
 import java.math.BigDecimal;
 
-public interface IPotentiallyFlyable {
+public interface PotentiallyFlyable {
     default boolean isPotentiallyFlyable(BigDecimal distanceMeters, float acceleration, int totalWeight,
                                          float efficiency, int totalFuel) {
 

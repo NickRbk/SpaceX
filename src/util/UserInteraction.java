@@ -34,7 +34,7 @@ public class UserInteraction {
         int counter = 0;
         String[] enginesType = new String[5];
 
-        System.out.println("\nStep 2. Now select engines to your Rocket: \n\tslow | economy | superFast | fast | old\n");
+        System.out.println("\nStep 2. Now select engines to your AbstractRocket: \n\tslow | economy | superFast | fast | old\n");
 
         while(counter < 3) {
 

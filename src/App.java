@@ -3,8 +3,8 @@ package src;
 import src.destination.Planets;
 import src.engine.Engine;
 import src.fuelTank.FuelTank;
-import src.rocket.Rocket;
-import src.rocket.SpaceX;
+import src.rocket.impl.AbstractRocket;
+import src.rocket.impl.SpaceX;
 import src.util.BeginTravel;
 import src.util.UserInteraction;
 
@@ -22,8 +22,8 @@ public class App {
             FuelTank[] fuelTanks = UserInteraction.askFuelTanks( engines );
             Planets planet = UserInteraction.askDestination();
 
-            // Create Rocket with input parameters
-            Rocket spaceX = new SpaceX();
+            // Create AbstractRocket with input parameters
+            AbstractRocket spaceX = new SpaceX();
             spaceX.assembleRocket(cabin, engines, fuelTanks);
 
             // Try to fly and ask for try again
