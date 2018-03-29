@@ -1,15 +1,15 @@
-package rocket.cabin;
+package src.model.cabin.impl;
 
-import engine.Engine;
-import rocket.cabin.type.ECabin;
+import src.model.cabin.Cabin;
+import src.model.cabin.type.Cabins;
+import src.model.engine.Engine;
 
-public class Cabin {
+public class CabinModel implements Cabin {
     private String name;
     private int height, width, weight, capacity;
-    private static Cabin cabin;
 
-    private Cabin(String cabinType) {
-        ECabin cabin = ECabin.valueOf(cabinType);
+    public CabinModel(String cabinType) {
+        Cabins cabin = Cabins.valueOf(cabinType);
 
         this.name = cabin.getName();
         this.height = cabin.getHeight();
@@ -18,27 +18,28 @@ public class Cabin {
         this.capacity = cabin.getCapacity();
     }
 
-    public static Cabin getCabin(String cabinType) {
-        if(cabin == null) {
-            return new Cabin(cabinType);
-        } else {
-            return cabin;
-        }
-    }
-
+    @Override
     public String toString() {
         return String.format("\nCabin Type: %s, max passengers - %d, dimensions (h: %d, w: %d), weight - %d",
                 name, capacity, height, width, weight);
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
     public int getWeight() {
         return weight;
     }
 
+    @Override
     public int getCapacity() {
         return capacity;
     }
 
+    @Override
     public void start(Engine[] engines) {
         System.out.println("\n\n\tPilots in cabin. Turning engines on ...");
         int engineCount = 0;

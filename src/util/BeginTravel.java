@@ -1,14 +1,15 @@
-package utils;
+package src.util;
 
-import destination.EPlanet;
-import rocket.Rocket;
+import src.calculation.SpaceTravel;
+import src.destination.Planets;
+import src.model.rocket.impl.AbstractRocket;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class BeginTravel {
-    public static boolean test(EPlanet planet, Rocket spaceX) {
+    public static boolean test(Planets planet, AbstractRocket spaceX) {
         if( spaceX.isPotentiallyFlyable(planet.getDistanceMeters(), spaceX.getAccelerationAverage(),
                 spaceX.getTotalWeight(), spaceX.getEfficiencyAverage(),spaceX.getTotalFuel()) ) {
 
@@ -27,16 +28,16 @@ public class BeginTravel {
         }
     }
 
-    private static void getTravelDuration(EPlanet planet, float acceleration) {
-        int daysInFlight = Integer.parseInt(SpaceCalculation.observerTravelTime(planet.getDistanceMeters(),
+    private static void getTravelDuration(Planets planet, float acceleration) {
+        int hoursInFlight = Integer.parseInt(SpaceTravel.observerTravelTime(planet.getDistanceMeters(),
                 acceleration).divide(BigDecimal.valueOf(3600), 0, RoundingMode.HALF_UP).toString());
 
         System.out.println("\nWelcome on " + planet.getName() + ". It far from Earth in " +
-                planet.getDistanceLightYears() + " astronomical units and takes " + daysInFlight + " hours");
+                planet.getDistanceLightYears() + " astronomical units and takes " + hoursInFlight + " hours");
 
         System.out.println(String.format("\n\t\tEarth %s <------------ %s AU ------------> %s %s",
-                Dates.currentDate().toString(), planet.getDistanceLightYears(),
-                Dates.arrivalDate(daysInFlight), planet.getName()));
+                FlightInfo.departureDate().toString(), planet.getDistanceLightYears(),
+                FlightInfo.arrivalDate( (int)Math.ceil( (float)hoursInFlight/24) ), planet.getName()));
     }
 
     private static boolean tryAgain() {

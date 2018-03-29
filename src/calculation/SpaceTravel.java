@@ -1,11 +1,9 @@
-package utils;
-
-import destination.SpaceConstant;
+package src.calculation;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class SpaceCalculation {
+public class SpaceTravel {
 
     // Observer time elapsed during journey. It's time in trip for people on Earth
     // Cuz formula for calc big it divided to several parts in code below

@@ -1,13 +1,14 @@
-package rocket.fuelTank;
+package src.model.fuelTank.impl;
 
-import rocket.fuelTank.type.EFuelTank;
+import src.model.fuelTank.FuelTank;
+import src.model.fuelTank.type.FuelTanks;
 
-public class FuelTank {
+public class FuelTankModel implements FuelTank {
     private String name;
     private int height, width, weight, capacity;
 
-    public FuelTank(String fuelTankType) {
-        EFuelTank fuelTank = EFuelTank.valueOf(fuelTankType);
+    public FuelTankModel(String fuelTankType) {
+        FuelTanks fuelTank = FuelTanks.valueOf(fuelTankType);
 
         this.name = fuelTank.getName();
         this.height = fuelTank.getHeight();
@@ -22,10 +23,12 @@ public class FuelTank {
                 name, capacity, height, width, weight);
     }
 
+    @Override
     public int getWeight() {
         return weight;
     }
 
+    @Override
     public int getCapacity() {
         return capacity;
     }

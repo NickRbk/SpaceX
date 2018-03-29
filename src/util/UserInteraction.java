@@ -1,11 +1,13 @@
-package utils;
+package src.util;
 
-import destination.EPlanet;
-import engine.Engine;
-import engine.type.EEngine;
-import rocket.cabin.type.ECabin;
-import rocket.fuelTank.FuelTank;
-import rocket.fuelTank.type.EFuelTank;
+import src.destination.Planets;
+import src.model.engine.Engine;
+import src.model.engine.impl.EngineModel;
+import src.model.engine.type.Engines;
+import src.model.cabin.type.Cabins;
+import src.model.fuelTank.FuelTank;
+import src.model.fuelTank.impl.FuelTankModel;
+import src.model.fuelTank.type.FuelTanks;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -19,7 +21,7 @@ public class UserInteraction {
         while(true) {
             String userInput = in.nextLine();
 
-            for(ECabin cabin : ECabin.values()) {
+            for(Cabins cabin : Cabins.values()) {
                 if(cabin.getName().equals(userInput)) {
                     return cabin.getName().toUpperCase();
                 }
@@ -34,7 +36,7 @@ public class UserInteraction {
         int counter = 0;
         String[] enginesType = new String[5];
 
-        System.out.println("\nStep 2. Now select engines to your Rocket: \n\tslow | economy | superFast | fast | old\n");
+        System.out.println("\nStep 2. Now select engines to your AbstractRocket: \n\tslow | economy | superFast | fast | old\n");
 
         while(counter < 3) {
 
@@ -42,7 +44,7 @@ public class UserInteraction {
 
             int shadowCounter = counter;
 
-            for(EEngine engine : EEngine.values()) {
+            for(Engines engine : Engines.values()) {
                 if(engine.getName().equals(userInput)) {
                     enginesType[counter] = engine.getName().toUpperCase();
                     counter++;
@@ -72,7 +74,7 @@ public class UserInteraction {
 
                 int shadowCounter = counter;
 
-                for(EEngine engine : EEngine.values()) {
+                for(Engines engine : Engines.values()) {
                     if(engine.getName().equals(userInput)) {
                         enginesType[counter] = engine.getName().toUpperCase();
                         ++counter;
@@ -91,18 +93,18 @@ public class UserInteraction {
 
         } while(additionalEngine);
 
-        Engine[] engines = new Engine[ enginesType.length ];
+        Engine[] engines = new EngineModel[ enginesType.length ];
 
         for(int i = 0; i < enginesType.length ; i++) {
             if(enginesType[i] != null) {
-                engines[i] = new Engine( enginesType[i] );
+                engines[i] = new EngineModel( enginesType[i] );
             }
         }
 
         // remove null from array
         engines = Arrays.stream(engines)
                 .filter(s -> (s != null))
-                .toArray(Engine[]::new);
+                .toArray(EngineModel[]::new);
 
         return engines;
     }
@@ -110,7 +112,7 @@ public class UserInteraction {
 
 
     public static FuelTank[] askFuelTanks(Engine[] engines) {
-        String fuelTanksType[] = new String[ engines.length ];
+        String[] fuelTanksType = new String[ engines.length ];
         int engineNumber = 0;
 
         Scanner in = new Scanner(System.in);
@@ -128,7 +130,7 @@ public class UserInteraction {
                     boolean isBigger = false;
                     String userInput = in.nextLine();
 
-                    for(EFuelTank fuelTankType : EFuelTank.values()) {
+                    for(FuelTanks fuelTankType : FuelTanks.values()) {
                         if(userInput.equals(fuelTankType.getName())) {
                             if(fuelTankType.getHeight() > engine.getHeight()
                                     || fuelTankType.getWidth() > engine.getWidth()) {
@@ -152,23 +154,23 @@ public class UserInteraction {
             }
         }
 
-        FuelTank[] fuelTanks = new FuelTank[ engines.length ];
+        FuelTank[] fuelTanks = new FuelTankModel[ engines.length ];
 
         for(int i = 0; i < fuelTanksType.length ; i++) {
             if(fuelTanksType[i] != null) {
-                fuelTanks[i] = new FuelTank( fuelTanksType[i] );
+                fuelTanks[i] = new FuelTankModel( fuelTanksType[i] );
             }
         }
 
         // remove null from array
         fuelTanks = Arrays.stream(fuelTanks)
                 .filter(s -> (s != null))
-                .toArray(FuelTank[]::new);
+                .toArray(FuelTankModel[]::new);
 
         return fuelTanks;
     }
 
-    public static EPlanet askDestination() {
+    public static Planets askDestination() {
         Scanner in = new Scanner(System.in);
 
         System.out.println("\nStep 4. Hi, passenger! We've almost finished, choose a planet to travel:" +
@@ -177,7 +179,7 @@ public class UserInteraction {
         while(true) {
             String userInput = in.nextLine();
 
-            for(EPlanet planet : EPlanet.values()) {
+            for(Planets planet : Planets.values()) {
                 if(userInput.equals( planet.getName() )) {
                     return planet;
                 }

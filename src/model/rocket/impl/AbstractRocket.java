@@ -1,29 +1,41 @@
-package rocket;
+package src.model.rocket.impl;
 
-import engine.Engine;
-import rocket.cabin.Cabin;
-import rocket.fuelTank.FuelTank;
+import src.model.cabin.Cabin;
+import src.model.cabin.impl.CabinModel;
+import src.model.engine.Engine;
+import src.model.fuelTank.FuelTank;
+import src.model.rocket.PotentiallyFlyable;
+import src.model.rocket.Rocket;
 
-public class Rocket implements IPotentiallyFlyable {
+public abstract class AbstractRocket implements Rocket, PotentiallyFlyable {
 
-    private int weight = 28000; // default Rocket weight
-
+    private int weight;
     private Cabin cabin;
     private Engine[] engines;
     private FuelTank[] fuelTanks;
 
+    AbstractRocket(int weight) {
+        this.weight = weight;
+    }
+
+    @Override
     public void assembleRocket(String cabin, Engine[] engines, FuelTank[] fuelTanks) {
         setCabin(cabin);
         setEngines(engines);
         setFuelTanks(fuelTanks);
     }
 
+    @Override
     public void start() {
         this.cabin.start(this.engines);
     }
 
     private void setCabin(String cabinType) {
-        this.cabin = Cabin.getCabin(cabinType);
+        if(this.cabin == null) {
+            this.cabin = new CabinModel(cabinType);
+        } else {
+            System.out.println(String.format("Sorry, your AbstractRocket has the cabin '%s'", this.cabin.getName()));
+        }
     }
 
     private void setEngines(Engine[] engines) {
@@ -34,11 +46,12 @@ public class Rocket implements IPotentiallyFlyable {
         this.fuelTanks = fuelTanks;
     }
 
-
+    @Override
     public int getWeight() {
         return weight;
     }
 
+    @Override
     public float getAccelerationAverage() {
         float total = 0f;
         int counts = this.engines.length;
@@ -50,6 +63,7 @@ public class Rocket implements IPotentiallyFlyable {
         return total / counts;
     }
 
+    @Override
     public int getTotalWeight() {
         int totalEngineWeight = 0;
         int totalFuelTankWeight = 0;
@@ -65,6 +79,7 @@ public class Rocket implements IPotentiallyFlyable {
         return getWeight() + totalEngineWeight + totalFuelTankWeight + this.cabin.getWeight() + this.cabin.getCapacity() * 80;
     }
 
+    @Override
     public int getTotalFuel() {
         int totalFuel = 0;
 
@@ -75,6 +90,7 @@ public class Rocket implements IPotentiallyFlyable {
         return totalFuel;
     }
 
+    @Override
     public float getEfficiencyAverage() {
         float total = 0f;
         int counts = this.engines.length;
@@ -86,10 +102,12 @@ public class Rocket implements IPotentiallyFlyable {
         return total / counts;
     }
 
+    @Override
     public void getCabin() {
         System.out.println(cabin.toString());
     }
 
+    @Override
     public void getEngines() {
         System.out.println("\nYour spaceship has the below engines: ");
         for(Engine engine : engines) {
@@ -97,6 +115,7 @@ public class Rocket implements IPotentiallyFlyable {
         }
     }
 
+    @Override
     public void getFuelTanks() {
         System.out.println("\nYour spaceship has the below fuel tanks: ");
         for(FuelTank fuelTank : fuelTanks) {

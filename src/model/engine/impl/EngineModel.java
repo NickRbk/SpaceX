@@ -1,15 +1,16 @@
-package engine;
+package src.model.engine.impl;
 
-import engine.type.EEngine;
+import src.model.engine.Engine;
+import src.model.engine.type.Engines;
 
-public class Engine {
+public class EngineModel implements Engine {
 
     private String name;
     private int height, width, weight, fuelConsumption, fuelTankSpace;
     private float power, acceleration1, acceleration2;
 
-    public Engine(String engineType) {
-        EEngine engine = EEngine.valueOf(engineType);
+    public EngineModel(String engineType) {
+        Engines engine = Engines.valueOf(engineType);
 
         this.name = engine.getName();
         this.height = engine.getHeight();
@@ -30,30 +31,37 @@ public class Engine {
                 name, power, height, width, weight, fuelTankSpace, acceleration1, acceleration2, fuelConsumption);
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public int getHeight() {
         return height;
     }
 
+    @Override
     public int getWidth() {
         return width;
     }
 
+    @Override
     public int getWeight() {
         return weight;
     }
 
+    @Override
     public float getPower() {
         return power;
     }
 
+    @Override
     public float getAcceleration1() {
         return acceleration1;
     }
 
+    @Override
     public float getAcceleration2() {
         return acceleration2;
     }
