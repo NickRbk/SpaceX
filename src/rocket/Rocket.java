@@ -23,7 +23,11 @@ public class Rocket implements IPotentiallyFlyable {
     }
 
     private void setCabin(String cabinType) {
-        this.cabin = Cabin.getCabin(cabinType);
+        if(this.cabin == null) {
+            this.cabin = new Cabin(cabinType);
+        } else {
+            System.out.println(String.format("Sorry, your Rocket has the cabin '%s'", this.cabin.getName()));
+        }
     }
 
     private void setEngines(Engine[] engines) {
