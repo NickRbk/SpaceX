@@ -1,8 +1,6 @@
 package src.util;
 
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
 
 public class FlightInfo {
     public static LocalDate departureDate() {
