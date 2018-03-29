@@ -5,9 +5,9 @@ import src.model.engine.Engine;
 import src.model.engine.impl.EngineModel;
 import src.model.engine.type.Engines;
 import src.model.cabin.type.Cabins;
-import src.model.fuelTank.FuelTank;
-import src.model.fuelTank.impl.FuelTankModel;
-import src.model.fuelTank.type.FuelTanks;
+import src.model.fueltank.FuelTank;
+import src.model.fueltank.impl.FuelTankModel;
+import src.model.fueltank.type.FuelTanks;
 
 import java.util.Arrays;
 import java.util.Scanner;

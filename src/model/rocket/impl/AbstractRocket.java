@@ -3,7 +3,7 @@ package src.model.rocket.impl;
 import src.model.cabin.Cabin;
 import src.model.cabin.impl.CabinModel;
 import src.model.engine.Engine;
-import src.model.fuelTank.FuelTank;
+import src.model.fueltank.FuelTank;
 import src.model.rocket.PotentiallyFlyable;
 import src.model.rocket.Rocket;
 
