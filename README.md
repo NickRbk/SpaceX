@@ -24,15 +24,14 @@ At the end you will be offered to try again.
 
 #### How to start up ?
 - git clone
-- enter to src\ package ```cd src```
-- compile App.java by ```javac App.java```
+- compile App.java by ```javac src/App.java```
 ##### after that you can start app in 2 ways:
-1# start app with ```java src.App```
+1# start app with ```java src/App```
 
 2# make a jar file in 2 steps and start:
          
-         echo "Main-Class: App"> manifest.mf
-         jar cmf manifest.mf App.jar *
+         echo "Main-Class: src/App"> manifest.mf
+         jar cmf manifest.mf App.jar src/*
          java -jar App.jar
 
 
